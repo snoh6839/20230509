@@ -1,65 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko" dir="ltr">
-
+<html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <title>live watch</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <div id="txt"></div>
-    <button id="btnStart">start</button>
-    <button id="btnStop">stop</button>
-    <script type="text/javascript">
-        function startTime() {
-            let today = new Date();
-            let h = today.getHours();
-            let m = today.getMinutes();
-            let s = today.getSeconds();
-            let t = setTimeout(startTime, 1000);
-            h = checkTime(h);
-            m = checkTime(m);
-            s = checkTime(s);
-            let timer_on = 0;
-            if( h < 13 ) {
-                document.getElementById('txt').innerHTML = `현재 시간 오전 ${h}시${m}분${s}초` 
-            } else {
-                document.getElementById('txt').innerHTML = `현재 시간 오후 ${h}시${m}분${s}초` 
-            }
-
-            let btnStart = document.getElementById('btnStart');
-            btnStart.onclick = function startCount() {
-                if (timer_on != 1) {
-                    timer_on = 1;
-                    startTime();
-                }
-
-            }
-
-            let btnStop = document.getElementById('btnStop');
-            btnStop.onclick = function pauseCount() {
-                clearTimeout(t);
-                timer_on = 0;
-            }
-        }
-        
-        
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
-            }
-            return i;
-        }
-
-        startTime();
-
-        
-
-        
-
-
-
-    </script>
+    <script src="./js/common.js"></script>
 </body>
-
 </html>
